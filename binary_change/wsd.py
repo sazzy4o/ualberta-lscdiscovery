@@ -82,7 +82,6 @@ class WSD:
                 used_sents.append(context)
                 result = requests.post(url, data=json.dumps(data), headers=headers)
                 if not result.ok:
-                    print(target_word, context)
                     continue
                 result = result.json()
                 all_results.append(result)
@@ -93,8 +92,6 @@ class WSD:
         text = "\n".join([json.dumps(json_) for json_ in all_results])    
         with open(folder + filename, 'w') as f:
             f.write(text)
-            #json.dump(result, f)
-            
         return
 
 if __name__ == "__main__":
@@ -102,5 +99,4 @@ if __name__ == "__main__":
     modern_filename = root + "corpora/modern_corpus/public_www/public_www/modern_corpus_pos.txt"
     old_filename = root + "corpora/old_corpus/dataset_XIX_pos.txt"
     target_filename = root + "target_words_part.txt"
-    #target_filename = root + "target_words_evaluation_phase2.txt"
     WSD(old_filename, modern_filename, target_filename)
