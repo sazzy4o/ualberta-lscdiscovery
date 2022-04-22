@@ -1,9 +1,5 @@
 from nltk.tokenize import sent_tokenize
-import string
-import time
-import urllib
 import json
-import gzip
 import requests
 
 class WSD:
