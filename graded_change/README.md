@@ -1,7 +1,9 @@
 # UAlberta Graded Change System
 This repo is based on CIRCE https://github.com/mpoemsl/circe
 
-The install and run instructions are the same as the original repo(see below). However, here are the commands you need to generate predictions for my methods (example use spanish shared task data, avaliable for download from https://zenodo.org/record/6433398#.YlKxy7kpBE4)
+The install and run instructions are the same as the original repo(see below). 
+
+Here are the commands you need to generate predictions for our methods:
 
 Static embeddings:
 ```
