@@ -1,9 +1,10 @@
 from nltk.tokenize import sent_tokenize
 import json
 import requests
+import argparse
 
 class WSD:
-    def __init__(self, old_filename, modern_filename, target_filename):
+    def __init__(self, old_filename, modern_filename, target_filename, old_wsd_folder, new_wsd_folder, old_wsd_jsonl, new_wsd_jsonl):
         self.old_filename = old_filename
         self.modern_filename = modern_filename
         self.target_filename = target_filename
@@ -19,8 +20,8 @@ class WSD:
         self.word_sent_results_old = {}
         self.word_sent_results_new = {}
 
-        self.disambiguateAmuse(self.old_word_tag_contexts, self.word_sent_results_old, 'old_wsd/', 'old_disambig_full_v3_eval.jsonl')
-        self.disambiguateAmuse(self.new_word_tag_contexts, self.word_sent_results_new, 'new_wsd/', 'new_disambig_full_v3_eval.jsonl')
+        self.disambiguateAmuse(self.old_word_tag_contexts, self.word_sent_results_old, old_wsd_folder, old_wsd_jsonl)
+        self.disambiguateAmuse(self.new_word_tag_contexts, self.word_sent_results_new, new_wsd_folder, new_wsd_jsonl)
 
         return
     
@@ -91,8 +92,22 @@ class WSD:
         return
 
 if __name__ == "__main__":
-    root = "/home/dteodore/starting_kit/"
-    modern_filename = root + "corpora/modern_corpus/public_www/public_www/modern_corpus_pos.txt"
-    old_filename = root + "corpora/old_corpus/dataset_XIX_pos.txt"
-    target_filename = root + "target_words_part.txt"
-    WSD(old_filename, modern_filename, target_filename)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('modern_filename', type=str, help='Modern pos tagged corpus')
+    parser.add_argument('old_filename', type=str, help='Old pos tagged corpus')
+    parser.add_argument('target_filename', type=str, help='Target word txt')
+    parser.add_argument('old_wsd_folder', type=str, help='Foldername for old wsd results')
+    parser.add_argument('new_wsd_folder', type=str, help='Foldername for new wsd results')
+    parser.add_argument('old_wsd_jsonl', type=str, help='Jsonl name for old wsd results')
+    parser.add_argument('new_wsd_jsonl', type=str, help='Jsonl name for new wsd results')
+
+    args = parser.parse_args()
+    modern_filename = args.modern_filename
+    old_filename = args.old_filename
+    target_filename = args.target_filename
+    old_wsd_folder = args.old_wsd_folder
+    new_wsd_folder = args.old_wsd_folder
+    old_wsd_jsonl = args.old_wsd_jsonl
+    new_wsd_jsonl = args.new_wsd_jsonl
+
+    WSD(old_filename, modern_filename, target_filename, old_wsd_folder, new_wsd_folder, old_wsd_jsonl, new_wsd_jsonl)
