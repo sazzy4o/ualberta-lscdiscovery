@@ -7,7 +7,7 @@ For phase 1 (graded change discovery), we ensemble static and contextual embeddi
 For phase 2 (binary change detection), we frame it as a word sense disambiguation problem.
 Code for graded change discovery and binary change detection are in the respective folders.
 
-#References
+# References
 
 If you are using the code, please cite
 
