@@ -14,7 +14,7 @@ python change_labels.py
 ```
 
 # References
-To cite AMuSE WSD
+This sytem uses AMuSE WSD
 ```
 @inproceedings{orlando-etal-2021-amuse,
     title = "{AMuSE-WSD}: {A}n All-in-one Multilingual System for Easy {W}ord {S}ense {D}isambiguation",
