@@ -2,3 +2,8 @@
 
 We approach binary change detection using Word Sense Disambiguation (WSD).
 The WSD system used is AMUsE by Orlando et al. 2021.
+
+To obtain WSD results for targets, run
+```
+python wsd.py
+```
