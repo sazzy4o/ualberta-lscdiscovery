@@ -49,7 +49,7 @@ class LSC:
                                 d[w][id] = 1
                             else:
                                 d[w][id] += 1
-                        #continue
+                        continue
         return
     
     def findTotal(self, d):
