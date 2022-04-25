@@ -10,7 +10,7 @@ python wsd.py <modern_filename.txt> <old_filename.txt> <target_words_filename.tx
 
 To determine binary change detection labels for each target word run
 ```
-python change_labels.py
+python change_labels.py <root_directory/> <target_words_filename.txt> <old_wsd_folder/> <new_wsd_folder/> <old_wsd.jsonl> <new_wsd.jsonl> <gold_change_scores.txt> <threshold>
 ```
 
 # References
