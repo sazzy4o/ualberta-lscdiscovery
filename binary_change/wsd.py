@@ -106,7 +106,7 @@ if __name__ == "__main__":
     old_filename = args.old_filename
     target_filename = args.target_filename
     old_wsd_folder = args.old_wsd_folder
-    new_wsd_folder = args.old_wsd_folder
+    new_wsd_folder = args.new_wsd_folder
     old_wsd_jsonl = args.old_wsd_jsonl
     new_wsd_jsonl = args.new_wsd_jsonl
 
