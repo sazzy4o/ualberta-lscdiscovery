@@ -93,8 +93,8 @@ class WSD:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('modern_filename', type=str, help='Modern pos tagged corpus')
     parser.add_argument('old_filename', type=str, help='Old pos tagged corpus')
+    parser.add_argument('modern_filename', type=str, help='Modern pos tagged corpus')
     parser.add_argument('target_filename', type=str, help='Target word txt')
     parser.add_argument('old_wsd_folder', type=str, help='Foldername for old wsd results')
     parser.add_argument('new_wsd_folder', type=str, help='Foldername for new wsd results')
